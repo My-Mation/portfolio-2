@@ -1,0 +1,429 @@
+
+/* --- DECORATED, HIGH-FIDELITY PORTFOLIO STYLES --- */
+/* --- Designed by Gemini, based on your prompt --- */
+
+/* ---------------------------------- */
+/*          1. ROOT & THEMES          */
+/* ---------------------------------- */
+
+:root {
+    --radius: 20px;
+    --transition-speed: 400ms;
+    --transition-ease: cubic-bezier(.4, .0, .2, 1);
+}
+
+/* [LIGHT THEME] - Pastel Tech Gradient */
+[data-theme="light"] {
+    --bg: #f4f6fb;
+    --panel: #ffffff;
+    --card: #ffffff;
+    --soft-card: #f8f9fe;
+    --accent1: #89a8ff;
+    --accent2: #8be7c6;
+    --accent3: #c7a5ff;
+    --text: #1c1c1c;
+    --text-dim: #5b5b5b;
+    --shadow-heavy: 0 20px 40px rgba(0,0,0,0.1);
+    --shadow-soft: 0 14px 30px rgba(0,0,0,0.08);
+    --glow: 0 0 20px rgba(137, 168, 255, 0.5);
+    --card-border: 1px solid #e9eaf3;
+    --nav-bg: rgba(255, 255, 255, 0.6);
+}
+
+/* [DARK THEME] - Futuristic Hacker Aesthetic */
+[data-theme="dark"] {
+    --bg: #070708;
+    --panel: #0d0e12;
+    --card: #121318;
+    --soft-card: #1a1b21;
+    --accent1: #4BA3FF;
+    --accent2: #3CE7A3;
+    --accent3: #9B6BFF;
+    --text: #F1F1F1;
+    --text-dim: #9c9c9c;
+    --shadow-heavy: 0 20px 40px rgba(0,0,0,0.6);
+    --shadow-soft: 0 10px 25px rgba(0,0,0,0.35);
+    --glow: 0 0 25px rgba(75, 163, 255, 0.4);
+    --card-border: 1px solid #22242d;
+    --nav-bg: rgba(18, 19, 24, 0.5);
+}
+
+/* ---------------------------------- */
+/*         2. BASE & TYPOGRAPHY       */
+/* ---------------------------------- */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    background-color: var(--bg);
+    color: var(--text);
+    transition: background-color var(--transition-speed) var(--transition-ease), color var(--transition-speed) var(--transition-ease);
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    background: linear-gradient(90deg, var(--accent1), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+p {
+    color: var(--text-dim);
+    line-height: 1.7;
+}
+
+a {
+    color: var(--accent1);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* ---------------------------------- */
+/*        3. NAVBAR (UPGRADED)        */
+/* ---------------------------------- */
+
+header {
+    position: sticky;
+    top: 16px;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 0 24px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    height: 64px;
+    padding: 0 16px;
+    
+    background-color: var(--nav-bg);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border-radius: 100px;
+    border: 1px solid var(--card-border);
+    box-shadow: var(--shadow-soft);
+    
+    transition: all 300ms var(--transition-ease);
+}
+
+nav .logo {
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    background: linear-gradient(90deg, var(--accent1), var(--accent2), var(--accent3));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 16px;
+}
+
+nav ul a {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 8px 4px;
+    position: relative;
+    transition: color 300ms ease;
+}
+
+nav ul a:hover {
+    color: var(--text);
+}
+
+nav ul a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent2);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 300ms var(--transition-ease);
+}
+
+nav ul a:hover::after {
+    transform: scaleX(1);
+}
+
+.theme-toggle {
+    background-color: rgba(255,255,255,0.1);
+    border: 1px solid var(--card-border);
+    border-radius: 100px;
+    color: var(--text);
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    font-size: 1.2rem; /* Using text for icon for now */
+    transition: all 300ms ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1) rotate(15deg);
+    border-color: var(--accent1);
+}
+
+/* ---------------------------------- */
+/*       4. PROJECT CARDS (FIXED)     */
+/* ---------------------------------- */
+
+main {
+    padding: 60px 24px;
+}
+
+.project-gallery {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.project-grid {
+    display: grid;
+    gap: 40px;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 900px) {
+  .project-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.project-card {
+    background-color: var(--card);
+    border-radius: var(--radius);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--shadow-soft);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    transform: perspective(1000px);
+    transition: transform 400ms ease, box-shadow 400ms ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-heavy);
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(300px circle at var(--mouse-x) var(--mouse-y), rgba(75, 163, 255, 0.15), transparent);
+    opacity: 0;
+    transition: opacity 400ms ease;
+    z-index: 1;
+}
+
+.project-card:hover::before {
+    opacity: 1;
+}
+
+.project-card .card-media {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+}
+
+.project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--radius) var(--radius) 0 0;
+    transition: transform 400ms var(--transition-ease);
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
+}
+
+.card-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* This is important for button placement */
+    position: relative;
+    z-index: 2;
+}
+
+.card-body h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: var(--text);
+}
+
+.card-body p {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Pushes button to the bottom */
+}
+
+/* BUTTON FIX & REDESIGN */
+.cta-button {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    text-align: center;
+    background: linear-gradient(90deg, var(--accent1), var(--accent2));
+    color: #070708;
+    border-radius: 12px;
+    border: none;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transform: scale(1);
+    box-shadow: 0 5px 15px -5px rgba(60, 231, 163, 0.4);
+    transition: all 300ms var(--transition-ease);
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px -5px rgba(60, 231, 163, 0.6);
+}
+
+/* ---------------------------------- */
+/*       5. ANIMATIONS & EFFECTS      */
+/* ---------------------------------- */
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 800ms var(--transition-ease) forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 800ms var(--transition-ease) forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Staggered animations */
+.stagger-children > * {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+/* ---------------------------------- */
+/*            6. MISC & OTHER PAGES   */
+/* ---------------------------------- */
+.contact-form {
+    max-width: 600px;
+    margin: 4rem auto;
+    padding: 40px;
+    background-color: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+}
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-dim);
+}
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--soft-card);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    color: var(--text);
+    font-size: 1rem;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--accent1);
+    box-shadow: 0 0 0 3px var(--accent1-translucent, rgba(75, 163, 255, 0.3));
+}
+.contact-form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+footer {
+    text-align: center;
+    padding: 40px 24px;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+}
+
+/* For individual project pages */
+.project-detail {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--panel);
+    padding: 40px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+}
+.project-detail .project-media {
+    margin: 2rem 0;
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+.project-detail .project-media img {
+    width: 100%;
+    display: block;
+}
+.project-detail h3 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    border-left: 4px solid var(--accent2);
+    padding-left: 1rem;
+}
+.project-detail ul {
+    list-style-position: inside;
+    padding-left: 1rem;
+    line-height: 1.8;
+    color: var(--text-dim);
+}
+

@@ -1,52 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - Debargha Sarkar</title>
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/theme.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+
     <header>
-        <nav>
-            <a href="index.html" class="logo">DEBARGHA SARKAR</a>
+        <nav class="fade-in">
+            <a href="index.html" class="logo">DEBARGHA</a>
             <ul>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-            <button class="theme-toggle">Toggle Theme</button>
+            <button class="theme-toggle" title="Toggle Theme">🌙</button>
         </nav>
     </header>
-    <main>
-        <section class="about">
-            <h2>About Me</h2>
-            <p>I build practical products across mobile apps, full-stack web platforms, and game development. I handle UI, backend APIs, real-time features, and deployment — focused on fast, reliable prototypes. Projects span AI-powered apps, multiplayer systems, and indie games.</p>
-        </section>
 
-        <section class="skills">
-            <h3>Skills</h3>
-            <div class="skill-grid">
-                <div class="skill-card">Flutter</div>
-                <div class="skill-card">Dart</div>
-                <div class="skill-card">Python</div>
-                <div class="skill-card">C++</div>
-                <div class="skill-card">HTML</div>
-                <div class="skill-card">CSS</div>
-                <div class="skill-card">JavaScript</div>
-                <div class="skill-card">Firebase</div>
-                <div class="skill-card">MongoDB</div>
-                <div class="skill-card">Node.js</div>
-                <div class="skill-card">Express</div>
-                <div class="skill-card">Unity</div>
+    <main>
+        <div class="project-detail fade-in-up">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <img src="assets/debargha-sarkar.png" alt="Debargha Sarkar" style="width: 120px; height: 120px; border-radius: 50%; box-shadow: var(--shadow-heavy); border: 3px solid var(--card);">
             </div>
-        </section>
+
+            <h2 style="text-align:center; font-size: 2.8rem; margin-bottom: 2rem;">About Me</h2>
+
+            <p style="font-size: 1.1rem; text-align: center; max-width: 600px; margin: 0 auto 3rem auto;">
+                I am a passionate developer with a love for creating beautiful, functional, and user-centric digital experiences. My journey in tech is driven by a desire to solve problems and build things that matter.
+            </p>
+
+            <h3>My Skills</h3>
+            <ul>
+                <li><b>Languages:</b> C, C++, Python, JavaScript, HTML, CSS, C#, SQL</li>
+                <li><b>Frameworks:</b> React, Node.js, Express.js, Pygame, Tkinter, Pandas</li>
+                <li><b>Tools & Platforms:</b> Git, GitHub, Docker, MongoDB, Unity Engine, Firebase, Figma</li>
+            </ul>
+
+            <h3>My Journey</h3>
+            <p>
+                From my first "Hello, World!" program, I was captivated by the power of code to bring ideas to life. I started with game development in Unity, which taught me the fundamentals of object-oriented programming and software architecture. This passion soon expanded to web and mobile development, where I discovered the joy of building scalable, real-world applications. I thrive on challenges and am always eager to learn new technologies and improve my craft.
+            </p>
+
+        </div>
     </main>
+
     <footer>
         <p>&copy; 2024 Debargha Sarkar</p>
     </footer>
-    <script src="js/theme.js"></script>
+
+    <script src="js/scripts.js"></script>
 </body>
 </html>

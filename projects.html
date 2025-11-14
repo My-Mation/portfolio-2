@@ -1,72 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects - Debargha Sarkar</title>
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/theme.css">
-    <link rel="stylesheet" href="css/pages/projects.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+
     <header>
-        <nav>
-            <a href="index.html" class="logo">DEBARGHA SARKAR</a>
+        <nav class="fade-in">
+            <a href="index.html" class="logo">DEBARGHA</a>
             <ul>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-            <button class="theme-toggle">Toggle Theme</button>
+            <button class="theme-toggle" title="Toggle Theme">🌙</button>
         </nav>
     </header>
+
     <main>
-        <section class="project-gallery">
-            <h2>My Projects</h2>
-            <div class="project-grid">
+        <div class="project-gallery">
+            <h2 class="fade-in-up">My Projects</h2>
+
+            <div class="project-grid stagger-children">
+                
+                <!-- Project Card 1: Portfolio -->
                 <div class="project-card">
-                    <img src="assets/sarbanash-demo.jpg" alt="Sarbanash Demo">
-                    <h3>Sarbanash – 2D Indie Game</h3>
-                    <p>A 2D top-down shooter with a unique twist, built with Unity.</p>
-                    <a href="projects/sarbanash.html" class="cta-button">Learn More</a>
+                    <div class="card-media">
+                        <img src="assets/portfolio-v2.png" alt="Portfolio Project Image">
+                    </div>
+                    <div class="card-body">
+                        <h3>Personal Portfolio v2</h3>
+                        <p>A complete redesign of my personal portfolio to create a modern, visually engaging experience using advanced CSS and vanilla JS.</p>
+                        <a href="https://github.com/My-Mation/portfolio-2" target="_blank" class="cta-button">View on GitHub</a>
+                    </div>
                 </div>
+
+                <!-- Project Card 2: Sarbanash -->
                 <div class="project-card">
-                    <img src="assets/repbot-demo.jpg" alt="RepBot Demo">
-                    <h3>RepBot – AI Workout Tracker</h3>
-                    <p>AI workout tracker built in Flutter with real-time pose estimation, automated rep counting, and performance analytics.</p>
-                    <a href="projects/repbot.html" class="cta-button">Learn More</a>
+                    <div class="card-media">
+                        <img src="assets/sarbanash-game.png" alt="Sarbanash Game Project Image">
+                    </div>
+                    <div class="card-body">
+                        <h3>Sarbanash (Game)</h3>
+                        <p>A top-down 2D horror game developed in Unity, focusing on atmospheric storytelling and puzzle-solving mechanics.</p>
+                        <a href="projects/sarbanash.html" class="cta-button">Read Case Study</a>
+                    </div>
                 </div>
-                <div class="project-card">
-                    <img src="assets/mindplay-demo.png" alt="MindPlay Demo">
-                    <h3>MindPlay – Real-Time Multiplayer Platform</h3>
-                    <p>A real-time multiplayer platform for playing classic board games with friends.</p>
-                    <a href="projects/mindplay.html" class="cta-button">Learn More</a>
-                </div>
-                <div class="project-card">
-                    <img src="assets/kisor-demo.png" alt="Kisor Demo">
-                    <h3>Kisor – AI Storybook Generator</h3>
-                    <p>An AI-powered storybook generator that creates personalized stories for children.</p>
-                    <a href="projects/kisor.html" class="cta-button">Learn More</a>
-                </div>
-                <div class="project-card">
-                    <img src="assets/golden-pledges-demo.png" alt="Golden Pledges 2025 Demo">
-                    <h3>Golden Pledges 2025</h3>
-                    <p>A website for a political campaign, built with modern web technologies.</p>
-                    <a href="projects/golden-pledges-2025.html" class="cta-button">Learn More</a>
-                </div>
-                <div class="project-card">
-                    <img src="assets/chat-reader-demo.jpg" alt="Chat Reader Demo">
-                    <h3>WhatsApp Chat Reader & Rizz Rater</h3>
-                    <p>A tool to analyze WhatsApp chat exports and rate your rizz.</p>
-                    <a href="projects/chat-reader.html" class="cta-button">Learn More</a>
-                </div>
+
+                <!-- Add more project cards here as needed -->
+
             </div>
-        </section>
+        </div>
     </main>
+
     <footer>
         <p>&copy; 2024 Debargha Sarkar</p>
     </footer>
-    <script src="js/theme.js"></script>
+
+    <script src="js/scripts.js"></script>
 </body>
 </html>
