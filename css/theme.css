@@ -1,0 +1,22 @@
+/* css/theme.css */
+
+.theme-light {
+    --bg: var(--bg-light);
+    --text: var(--text-light);
+    --border: #ccc;
+}
+
+.theme-dark {
+    --bg: var(--bg-dark);
+    --text: var(--text-dark);
+    --border: #444;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+.card, .cta-buttons a {
+    border-color: var(--border);
+}
