@@ -1,45 +1,43 @@
-/* Base styles for the portfolio website */
+/* Apply a natural box layout model to all elements */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 
 body {
-    font-family: sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
-    padding: 0;
-    background-color: var(--background-color);
-    color: var(--text-color);
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
 }
 
-header {
-    background-color: var(--header-background-color);
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    letter-spacing: 0.5px;
 }
 
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-nav li {
-    margin-right: 1rem;
-}
-
-nav a {
+a {
+    color: var(--color-accent-primary);
     text-decoration: none;
-    color: var(--header-text-color);
-    font-weight: bold;
+    transition: color var(--transition-speed) ease;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 main {
     padding: 2rem;
-}
-
-footer {
-    background-color: var(--footer-background-color);
-    padding: 1rem;
-    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }

@@ -1,25 +1,70 @@
-/* Light and dark theme variables */
+
+/* 1. THEME ARCHITECTURE & VARIABLES */
 
 :root {
-    --background-color: #fff;
-    --text-color: #333;
-    --header-background-color: #f0f0f0;
-    --header-text-color: #333;
-    --footer-background-color: #f0f0f0;
-    --button-background-color: #333;
-    --button-text-color: #fff;
-    --border-color: #ddd;
-    --card-background-color: #f9f9f9;
+    --transition-speed: 0.25s;
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease, border-color var(--transition-speed) ease;
 }
 
-[data-theme="dark"] {
-    --background-color: #333;
-    --text-color: #fff;
-    --header-background-color: #222;
-    --header-text-color: #fff;
-    --footer-background-color: #222;
-    --button-background-color: #fff;
-    --button-text-color: #333;
-    --border-color: #555;
-    --card-background-color: #444;
+html.theme-light {
+    /* 3. LIGHT MODE — “Pastel Playful Tech” */
+
+    /* Palette */
+    --color-background: #F7F7FA;
+    --color-surface: #FFFFFF;
+    --color-card: #FFFFFF;
+    --color-text-primary: #1C1C1C;
+    --color-text-secondary: #555555;
+    --color-border: #EAEAEA;
+
+    /* Accents */
+    --color-accent-primary: #A6C8FF; /* Pastel Blue */
+    --color-accent-secondary: #D8B4FE; /* Pastel Purple */
+    --color-accent-tertiary: #C8F7DC; /* Pastel Green */
+    --color-accent-quaternary: #FFD4A6; /* Pastel Orange */
+
+    /* Shadows */
+    --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+    /* Header */
+    --header-background: rgba(255, 255, 255, 0.4);
+}
+
+html.theme-dark {
+    /* 2. DARK MODE — “Matte Black Hacker Aesthetic” */
+
+    /* Palette */
+    --color-background: #0B0B0B;
+    --color-surface: #111111;
+    --color-card: #1A1A1A;
+    --color-text-primary: #FFFFFF;
+    --color-text-secondary: #B3B3B3;
+    --color-border: #222222;
+
+    /* Accents */
+    --color-accent-primary: #3F8CFF; /* Electric Blue */
+    --color-accent-secondary: #72FF72; /* Neon Green */
+    --color-accent-tertiary: #B3B3B3; /* Use secondary text for less important accents */
+    --color-accent-quaternary: #555555;
+
+    /* Shadows */
+    --shadow-soft: 0 6px 16px rgba(0, 0, 0, 0.2);
+
+    /* Header */
+    --header-background: rgba(0, 0, 0, 0.6);
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    :root {
+        --transition-speed: 0s;
+        transition: none;
+    }
+
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
