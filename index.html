@@ -4,61 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Debargha Sarkar - Portfolio</title>
-    <link rel="stylesheet" href="styles/theme.css">
-    <link rel="stylesheet" href="styles/components.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-        }
-    </style>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/theme.css">
 </head>
 <body>
-    <nav>
-        <a href="index.html" class="logo">Debargha Sarkar</a>
-        <ul>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <button class="theme-toggle">O</button>
-    </nav>
-
-    <main class="max-container">
-        <section id="hero">
-            <h1>Full-Stack Developer & AI Enthusiast</h1>
-            <p>Building intelligent applications that solve real-world problems.</p>
-            <a href="projects.html" class="cta-button">View My Work</a>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">DEBARGHA SARKAR</a>
+            <ul>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="theme-toggle">Toggle Theme</button>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-text">
+                <h1>Full-Stack Developer & AI Enthusiast</h1>
+                <p>I build intelligent applications that solve real-world problems. From AI-powered mobile apps to real-time multiplayer games, I love to create fast, reliable, and engaging products.</p>
+                <a href="projects.html" class="cta-button">View My Work</a>
+            </div>
+            <div class="hero-images">
+                <img src="assets/profile-1.png" alt="Profile Picture 1" class="profile-pic-1">
+                <img src="assets/profile-2.png" alt="Profile Picture 2" class="profile-pic-2">
+            </div>
         </section>
 
-        <section id="featured-projects" class="fade-in-section">
+        <section class="featured-projects">
             <h2>Featured Projects</h2>
             <div class="project-grid">
                 <div class="project-card">
                     <img src="assets/repbot-demo.jpg" alt="RepBot Demo">
                     <h3>RepBot – AI Workout Tracker</h3>
-                    <p>AI workout tracker built in Flutter with real-time pose estimation, automated rep counting, and performance analytics.</p>
-                    <a href="projects/repbot.html">Learn More</a>
+                    <p>AI workout tracker built in Flutter with real-time pose estimation and automated rep counting.</p>
+                    <a href="projects/repbot.html" class="cta-button">Learn More</a>
                 </div>
                 <div class="project-card">
                     <img src="assets/mindplay-demo.png" alt="MindPlay Demo">
                     <h3>MindPlay – Real-Time Multiplayer Platform</h3>
                     <p>A real-time multiplayer platform for playing classic board games with friends.</p>
-                    <a href="projects/mindplay.html">Learn More</a>
+                    <a href="projects/mindplay.html" class="cta-button">Learn More</a>
                 </div>
                 <div class="project-card">
                     <img src="assets/kisor-demo.png" alt="Kisor Demo">
                     <h3>Kisor – AI Storybook Generator</h3>
                     <p>An AI-powered storybook generator that creates personalized stories for children.</p>
-                    <a href="projects/kisor.html">Learn More</a>
+                    <a href="projects/kisor.html" class="cta-button">Learn More</a>
                 </div>
             </div>
         </section>
     </main>
-
-    <script src="scripts/theme.js"></script>
-    <script src="scripts/scroll-animate.js"></script>
+    <footer>
+        <p>&copy; 2024 Debargha Sarkar</p>
+    </footer>
+    <script src="js/theme.js"></script>
 </body>
 </html>

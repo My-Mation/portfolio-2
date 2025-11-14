@@ -4,56 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - Debargha Sarkar</title>
-    <link rel="stylesheet" href="styles/theme.css">
-    <link rel="stylesheet" href="styles/components.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-        }
-        .skill-badge {
-            display: inline-block;
-            padding: 8px 16px;
-            background: var(--surface);
-            border-radius: var(--radius);
-            margin: 5px;
-            box-shadow: var(--shadow);
-        }
-    </style>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/theme.css">
 </head>
 <body>
-    <nav>
-        <a href="index.html" class="logo">Debargha Sarkar</a>
-        <ul>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <button class="theme-toggle">O</button>
-    </nav>
-
-    <main class="max-container">
-        <section id="about" class="fade-in-section">
+    <header>
+        <nav>
+            <a href="index.html" class="logo">DEBARGHA SARKAR</a>
+            <ul>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="theme-toggle">Toggle Theme</button>
+        </nav>
+    </header>
+    <main>
+        <section class="about">
             <h2>About Me</h2>
-            <p style="max-width: 650px;">I build practical products across mobile apps, full-stack web platforms, and game development. I handle UI, backend APIs, real-time features, and deployment — focused on fast, reliable prototypes. Projects span AI-powered apps, multiplayer systems, and indie games.</p>
+            <p>I build practical products across mobile apps, full-stack web platforms, and game development. I handle UI, backend APIs, real-time features, and deployment — focused on fast, reliable prototypes. Projects span AI-powered apps, multiplayer systems, and indie games.</p>
         </section>
 
-        <section id="skills" class="fade-in-section">
+        <section class="skills">
             <h3>Skills</h3>
-            <div>
-                <span class="skill-badge">HTML, CSS, JavaScript</span>
-                <span class="skill-badge">Flutter, Dart</span>
-                <span class="skill-badge">Python, C++</span>
-                <span class="skill-badge">Firebase, MongoDB</span>
-                <span class="skill-badge">Node.js, Express</span>
-                <span class="skill-badge">Unity</span>
+            <div class="skill-grid">
+                <div class="skill-card">Flutter</div>
+                <div class="skill-card">Dart</div>
+                <div class="skill-card">Python</div>
+                <div class="skill-card">C++</div>
+                <div class="skill-card">HTML</div>
+                <div class="skill-card">CSS</div>
+                <div class="skill-card">JavaScript</div>
+                <div class="skill-card">Firebase</div>
+                <div class="skill-card">MongoDB</div>
+                <div class="skill-card">Node.js</div>
+                <div class="skill-card">Express</div>
+                <div class="skill-card">Unity</div>
             </div>
         </section>
     </main>
-
-    <script src="scripts/theme.js"></script>
-    <script src="scripts/scroll-animate.js"></script>
+    <footer>
+        <p>&copy; 2024 Debargha Sarkar</p>
+    </footer>
+    <script src="js/theme.js"></script>
 </body>
 </html>
