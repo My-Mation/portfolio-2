@@ -1,64 +1,59 @@
 <!DOCTYPE html>
-<html lang="en" class="theme-dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - Debargha Sarkar</title>
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="styles/theme.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+        }
+        .skill-badge {
+            display: inline-block;
+            padding: 8px 16px;
+            background: var(--surface);
+            border-radius: var(--radius);
+            margin: 5px;
+            box-shadow: var(--shadow);
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="index.html" class="logo">DEBARGHA SARKAR</a>
-            <ul>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <button class="theme-toggle">Toggle Theme</button>
-        </nav>
-    </header>
-    <main>
-        <section id="about">
+    <nav>
+        <a href="index.html" class="logo">Debargha Sarkar</a>
+        <ul>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="theme-toggle">O</button>
+    </nav>
+
+    <main class="max-container">
+        <section id="about" class="fade-in-section">
             <h2>About Me</h2>
-            <p>I build practical products across mobile apps, full-stack web platforms, and game development. I handle UI, backend APIs, real-time features, and deployment — focused on fast, reliable prototypes. Projects span AI-powered apps, multiplayer systems, and indie games.</p>
-            <h3>Skills</h3>
-            <ul>
-                <li>HTML, CSS, JavaScript</li>
-                <li>Flutter, Dart</li>
-                <li>Python, C++</li>
-                <li>Firebase, MongoDB</li>
-                <li>Node.js, Express</li>
-                <li>Unity</li>
-            </ul>
-            <h3>Core Strengths</h3>
-            <ul>
-                <li>Rapid Prototyping</li>
-                <li>Full-Stack Development</li>
-                <li>Problem Solving</li>
-                <li>Game Design & Development</li>
-            </ul>
-            <h3>Education</h3>
-            <p>Bachelor of Technology in Computer Science and Engineering, Netaji Subhash Engineering College (2023-2027)</p>
-            <h3>Achievements</h3>
-            <a href="https://github.com/My-Mation">
-                <img src="https://img.shields.io/badge/Hacktoberfest-2023-orange.svg" alt="Hacktoberfest 2023 Participant">
-            </a>
+            <p style="max-width: 650px;">I build practical products across mobile apps, full-stack web platforms, and game development. I handle UI, backend APIs, real-time features, and deployment — focused on fast, reliable prototypes. Projects span AI-powered apps, multiplayer systems, and indie games.</p>
         </section>
-        <section id="resume">
-            <h2>Resume</h2>
-            <a href="assets/Resume_Debargha_Sarkar.pdf" class="cta-button" download>Download Resume</a>
+
+        <section id="skills" class="fade-in-section">
+            <h3>Skills</h3>
+            <div>
+                <span class="skill-badge">HTML, CSS, JavaScript</span>
+                <span class="skill-badge">Flutter, Dart</span>
+                <span class="skill-badge">Python, C++</span>
+                <span class="skill-badge">Firebase, MongoDB</span>
+                <span class="skill-badge">Node.js, Express</span>
+                <span class="skill-badge">Unity</span>
+            </div>
         </section>
     </main>
-    <footer>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/debargha-sarkar-72575937a">LinkedIn</a>
-            <a href="https://github.com/My-Mation">GitHub</a>
-        </div>
-        <p>&copy; 2024 Debargha Sarkar</p>
-    </footer>
-    <script src="js/theme.js"></script>
+
+    <script src="scripts/theme.js"></script>
+    <script src="scripts/scroll-animate.js"></script>
 </body>
 </html>

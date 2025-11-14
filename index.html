@@ -1,62 +1,47 @@
 <!DOCTYPE html>
-<html lang="en" class="theme-dark"> <!-- Default to dark theme -->
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Debargha Sarkar - Portfolio</title>
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="styles/theme.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="index.html" class="logo">DEBARGHA SARKAR</a>
-            <ul>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <button class="theme-toggle">Toggle Theme</button>
-        </nav>
-    </header>
-    <main>
+    <nav>
+        <a href="index.html" class="logo">Debargha Sarkar</a>
+        <ul>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="theme-toggle">O</button>
+    </nav>
+
+    <main class="max-container">
         <section id="hero">
             <h1>Full-Stack Developer & AI Enthusiast</h1>
-            <p class="one-liner">Building intelligent applications that solve real-world problems.</p>
+            <p>Building intelligent applications that solve real-world problems.</p>
             <a href="projects.html" class="cta-button">View My Work</a>
         </section>
 
-        <section id="featured-projects">
+        <section id="featured-projects" class="fade-in-section">
             <h2>Featured Projects</h2>
             <div class="project-grid">
-                <div class="project-card">
-                    <img src="assets/repbot-demo.jpg" alt="RepBot Cover Image">
-                    <h3>RepBot – AI Workout Tracker</h3>
-                    <p>AI workout tracker built in Flutter with real-time pose estimation and automated rep counting.</p>
-                    <div class="tech-tags"><span>Flutter</span><span>Firebase</span><span>ML Kit</span></div>
-                    <a href="projects/repbot.html">View details</a>
-                </div>
-                <div class="project-card">
-                    <img src="assets/mindplay-demo.png" alt="MindPlay Cover Image">
-                    <h3>MindPlay – Real-Time Multiplayer Platform</h3>
-                    <p>A real-time multiplayer platform for playing classic board games with friends.</p>
-                    <div class="tech-tags"><span>Node.js</span><span>Socket.IO</span><span>JavaScript</span></div>
-                    <a href="projects/mindplay.html">View details</a>
-                </div>
-                <div class="project-card">
-                    <img src="assets/chat-reader-demo.jpg" alt="WhatsApp Chat Reader Cover Image">
-                    <h3>WhatsApp Chat Reader & Rizz Rater</h3>
-                    <p>A tool to analyze WhatsApp chat exports and rate your rizz.</p>
-                    <div class="tech-tags"><span>Python</span><span>Flask</span><span>JavaScript</span></div>
-                    <a href="projects/chat-reader.html">View details</a>
-                </div>
+                <!-- Project Cards Here -->
             </div>
         </section>
     </main>
-    <footer>
-        <p>&copy; 2024 Debargha Sarkar</p>
-    </footer>
-    <script src="js/theme.js"></script>
+
+    <script src="scripts/theme.js"></script>
+    <script src="scripts/scroll-animate.js"></script>
 </body>
 </html>

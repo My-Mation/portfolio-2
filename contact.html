@@ -1,39 +1,44 @@
 <!DOCTYPE html>
-<html lang="en" class="theme-dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Debargha Sarkar</title>
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="styles/theme.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="index.html" class="logo">DEBARGHA SARKAR</a>
-            <ul>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <button class="theme-toggle">Toggle Theme</button>
-        </nav>
-    </header>
-    <main>
-        <section id="contact">
+    <nav>
+        <a href="index.html" class="logo">Debargha Sarkar</a>
+        <ul>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="theme-toggle">O</button>
+    </nav>
+
+    <main class="max-container">
+        <section id="contact" class="fade-in-section">
             <h2>Contact Me</h2>
             <form>
                 <input type="text" name="name" placeholder="Your Name" required>
                 <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" required></textarea>
+                <textarea name="message" placeholder="Your Message" required rows="5"></textarea>
                 <button type="submit" class="cta-button">Send Message</button>
             </form>
         </section>
     </main>
-    <footer>
-        <p>&copy; 2024 Debargha Sarkar</p>
-    </footer>
-    <script src="js/theme.js"></script>
+
+    <script src="scripts/theme.js"></script>
+    <script src="scripts/scroll-animate.js"></script>
 </body>
 </html>
