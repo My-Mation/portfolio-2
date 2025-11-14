@@ -1,30 +1,38 @@
-/* 2. THEME SYSTEM (CRITICAL) */
+/* Theme CSS */
 
-/* 2.1 Dark Mode — “Matte Hacker Style” */
-html.theme-dark {
-    --bg: #0b0b0b;
-    --surface: #111111;
-    --card-bg: #141414;
-    --text: #f5f5f5;
-    --text-muted: #b3b3b3;
-    --accent: #4ba3ff;
-    --radius: 12px;
-    --shadow: 0 8px 24px rgba(0,0,0,0.3);
+:root {
+    --primary: #007bff;
+    --radius: 8px;
+
+    --light-bg: #f8f9fa;
+    --light-surface: #fff;
+    --light-text: #333;
+
+    --dark-bg: #121212;
+    --dark-surface: #1e1e1e;
+    --dark-text: #f8f9fa;
 }
 
-/* 2.2 Light Mode — “Pastel Tech Style” */
-html.theme-light {
-    --bg: #f7f8fc;
-    --surface: #ffffff;
-    --card-bg: #ffffff;
-    --text: #1c1c1c;
-    --text-muted: #555555;
-    --accent: #8ab4ff;
-    --radius: 12px;
-    --shadow: 0 8px 24px rgba(0,0,0,0.1);
+[data-theme="light"] {
+    --bg: var(--light-bg);
+    --surface: var(--light-surface);
+    --text: var(--light-text);
 }
 
-/* 2.3 Theme Toggle */
+[data-theme="dark"] {
+    --bg: var(--dark-bg);
+    --surface: var(--dark-surface);
+    --text: var(--dark-text);
+}
+
 body {
-    transition: background-color .3s, color .3s, border-color .3s;
+    background-color: var(--bg);
+    color: var(--text);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.max-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem;
 }
