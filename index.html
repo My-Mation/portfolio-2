@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -24,26 +25,33 @@
     </header>
 
     <main>
-        <section class="hero-section" style="padding: 100px 24px; text-align: center;">
-            <div style="max-width: 800px; margin: auto;">
-                <img src="assets/profile-2.png" alt="Debargha Sarkar" style="width: 150px; height: 150px; border-radius: 50%; margin-bottom: 2rem; box-shadow: var(--shadow-heavy); border: 4px solid var(--card);">
+        <section class="hero">
+            <div class="hero-content fade-in-up">
+                <img src="assets/profile-2.png" alt="Debargha Sarkar" id="hero-img" class="hero-img">
                 
-                <h1 class="fade-in-up" style="font-size: 3.5rem; letter-spacing: -0.03em; margin-bottom: 1rem; background: linear-gradient(90deg, var(--accent1), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                <h1 class="hero-headline">
                     Full-Stack & Game Developer
                 </h1>
 
-                <p class="fade-in-up" style="font-size: 1.2rem; max-width: 650px; margin: 0 auto 2rem auto; color: var(--text-dim); animation-delay: 150ms;">
-                    I build high-performance applications and interactive experiences, from sleek mobile apps to scalable web platforms and engaging games.
+                <p class="hero-tagline">
+                    I build high-performance apps, real-time systems, and immersive game experiences.
                 </p>
 
-                <div class="fade-in-up" style="animation-delay: 300ms;">
-                    <a href="projects.html" class="cta-button" style="display: inline-block; width: auto; padding: 16px 32px;">
-                        View My Work
-                    </a>
+                <div class="hero-stats">
+                    <span class="stat-item"><i class="iconoir-github"></i> <span id="gh-repos">--</span>+ Public Repos</span>
+                    <span class="stat-item"><i class="iconoir-user"></i> <span id="gh-followers">--</span> Followers</span>
+                    <span class="stat-item"><i class="iconoir-rocket"></i> Open to Opportunities</span>
+                </div>
+
+                <a href="projects.html" class="cta-button">View My Work</a>
+
+                <div class="hero-socials">
+                    <a href="https://github.com/My-Mation" target="_blank" title="GitHub"><i class="iconoir-github"></i></a>
+                    <a href="mailto:debarghasarkar.dev@gmail.com" title="Email"><i class="iconoir-mail"></i></a>
+                    <a href="assets/Resume_Debargha_Sarkar.pdf" target="_blank" title="Resume"><i class="iconoir-page"></i></a>
                 </div>
             </div>
         </section>
-
     </main>
 
     <footer>

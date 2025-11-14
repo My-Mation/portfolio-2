@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggleButton = document.querySelector('.theme-toggle');
     const html = document.documentElement;
 
-    // Set initial theme based on saved preference or system setting
     const savedTheme = localStorage.getItem('theme');
     const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const currentTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
@@ -18,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
         themeToggleButton.textContent = newTheme === 'dark' ? '☀️' : '🌙';
     });
 
-
     // --- 2. SCROLL-TRIGGERED ANIMATIONS --- //
     const observer = new IntersectionObserver((entries, obs) => {
         entries.forEach(entry => {
@@ -27,64 +25,30 @@ document.addEventListener('DOMContentLoaded', () => {
                 obs.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+    }, { threshold: 0.1 });
 
-    // Observe elements with animation classes
     const animatedElements = document.querySelectorAll('.fade-in, .fade-in-up');
     animatedElements.forEach(el => observer.observe(el));
 
-    // Staggered animations
-    const staggerContainers = document.querySelectorAll('.stagger-children');
-    staggerContainers.forEach(container => {
-        const children = container.querySelectorAll(':scope > *');
-        children.forEach((child, index) => {
-            child.style.animationDelay = `${index * 120}ms`;
+    // --- 3. GITHUB API INTEGRATION --- //
+    const githubUsername = "My-Mation";
+    fetch(`https://api.github.com/users/${githubUsername}`)
+        .then(res => {
+            if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+            return res.json();
+        })
+        .then(data => {
+            if (data.public_repos !== undefined) {
+                document.getElementById("gh-repos").innerText = data.public_repos;
+            }
+            if (data.followers !== undefined) {
+                document.getElementById("gh-followers
+").innerText = data.followers;
+            }
+        })
+        .catch(error => {
+            console.error("Could not fetch GitHub data:", error);
+            document.getElementById("gh-repos").innerText = "20+"; // Fallback
+            document.getElementById("gh-followers").innerText = "--";
         });
-        observer.observe(container); // Observe container to trigger children
-        container.classList.add('in-view'); // Special class to trigger staggered animation
-    });
-    
-
-    // --- 3. PROJECT CARD MOUSE-MOVE EFFECT --- //
-    const cards = document.querySelectorAll('.project-card');
-
-    cards.forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-
-            // Set mouse position for the radial gradient
-            card.style.setProperty('--mouse-x', `${x}px`);
-            card.style.setProperty('--mouse-y', `${y}px`);
-            
-            // 3D Tilt Effect
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            const rotateX = (y - centerY) / 25; // Slower rotation
-            const rotateY = (centerX - x) / 25;
-
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
-        });
-
-        card.addEventListener('mouseleave', () => {
-            // Reset all transformations
-            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
-        });
-    });
-
-});
-
-// Add a specific class to body when an element is in view to trigger animations
-// This is an alternative way to handle animations if direct class adding isn't enough
-const animationObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('start-animation');
-        }
-    });
-});
-
-document.querySelectorAll('.project-grid').forEach(grid => {
-    if(grid) animationObserver.observe(grid);
 });
