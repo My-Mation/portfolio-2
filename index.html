@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Debargha Sarkar - Portfolio</title>
+    <title>Debargha Sarkar - CSE Student, Developer</title>
+    <meta name="description" content="Debargha Sarkar's personal portfolio. First-Year CSE Student at Netaji Subhash Engineering College, building practical products across mobile, web, and game development.">
+    <meta property="og:title" content="Debargha Sarkar - Portfolio">
+    <meta property="og:description" content="First-Year CSE Student building practical products across mobile, web, and game development.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/theme.css">
@@ -11,23 +16,43 @@
 <body>
     <header>
         <nav>
+            <a href="index.html" class="logo">DEBARGHA SARKAR</a>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
                 <li><a href="projects.html">Projects</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
+            <button class="theme-toggle">Toggle Theme</button>
         </nav>
     </header>
     <main>
         <section id="hero">
-            <h1>Debargha Sarkar</h1>
-            <p>Aspiring Full-Stack Developer</p>
-            <a href="projects.html" class="cta-button">View My Work</a>
+            <div class="hero-content">
+                <h1>Hi — I’m Debargha Sarkar. I build fast, reliable apps, multiplayer systems, and indie games.</h1>
+                <p>First-Year CSE Student, Netaji Subhash Engineering College</p>
+                <div class="cta-buttons">
+                    <a href="projects/repbot.html" class="cta-button">View RepBot</a>
+                    <a href="projects.html" class="cta-button">See Projects</a>
+                    <a href="assets/Resume_Debargha_Sarkar.pdf" class="cta-button" download>Download Resume</a>
+                </div>
+            </div>
+        </section>
+        <section id="highlights">
+            <h2>Highlights</h2>
+            <!-- Project highlights will be dynamically loaded here -->
+        </section>
+        <section id="quick-contact">
+            <h2>Contact</h2>
+            <p>debarghasarkar175@gmail.com</p>
         </section>
     </main>
     <footer>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/debargha-sarkar-72575937a">LinkedIn</a>
+            <a href="https://github.com/My-Mation">GitHub</a>
+        </div>
         <p>&copy; 2024 Debargha Sarkar</p>
     </footer>
+    <script src="js/theme.js"></script>
 </body>
 </html>

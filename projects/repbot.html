@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RepBot - AI Workout Tracker</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">DEBARGHA SARKAR</a>
+            <ul>
+                <li><a href="../projects.html">Projects</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+            <button class="theme-toggle">Toggle Theme</button>
+        </nav>
+    </header>
+    <main>
+        <section class="project-detail">
+            <h2>RepBot – AI Workout Tracker</h2>
+            <p class="one-liner">AI workout tracker built in Flutter with real-time pose estimation, automated rep counting, and performance analytics.</p>
+            
+            <div class="project-media">
+                <!-- Placeholder for demo/gifs -->
+                <img src="../assets/repbot-demo.gif" alt="RepBot Demo">
+            </div>
+
+            <h3>Problem Statement</h3>
+            <p>Weightlifters and fitness enthusiasts often struggle to accurately track their workout repetitions and maintain proper form. This can lead to inefficient training and potential injuries. RepBot aims to solve this by providing a hands-free, AI-powered workout tracker.</p>
+
+            <h3>Tech Stack</h3>
+            <ul class="tech-stack">
+                <li>Flutter</li>
+                <li>Firebase</li>
+                <li>Google ML Kit (Pose Detection)</li>
+                <li>Dart</li>
+            </ul>
+
+            <h3>Architecture</h3>
+            <p>The application uses a simple yet effective architecture. The Flutter front-end captures video frames from the device camera and passes them to Google's ML Kit for pose detection. A custom algorithm then analyzes the pose landmarks to count repetitions and provide feedback on form. Firebase is used for user authentication and data storage.</p>
+            <!-- Placeholder for SVG architecture diagram -->
+
+            <h3>My Role</h3>
+            <p>I was the sole developer for this project. I was responsible for all aspects of development, from UI/UX design to implementing the core AI features and integrating with Firebase.</p>
+
+            <h3>Key Challenges</h3>
+            <ul>
+                <li>Developing an accurate rep-counting algorithm that works for various exercises.</li>
+                <li>Optimizing the pose detection pipeline to run smoothly on mobile devices.</li>
+                <li>Designing an intuitive user interface that provides clear and concise feedback.</li>
+            </ul>
+
+            <h3>Lessons Learned</h3>
+            <p>This project was a great learning experience in mobile app development, computer vision, and machine learning. I gained valuable experience in building complex AI-powered applications and optimizing their performance for mobile devices.</p>
+
+            <a href="https://github.com/My-Mation/RepBot" class="cta-button">View on GitHub</a>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Debargha Sarkar</p>
+    </footer>
+    <script src="../js/theme.js"></script>
+</body>
+</html>

@@ -4,39 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects - Debargha Sarkar</title>
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/theme.css">
 </head>
 <body>
     <header>
         <nav>
+            <a href="../index.html" class="logo">DEBARGHA SARKAR</a>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="../projects.html">Projects</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
             </ul>
+            <button class="theme-toggle">Toggle Theme</button>
         </nav>
     </header>
     <main>
-        <section id="projects">
-            <h2>My Projects</h2>
+        <section id="projects-gallery">
+            <h2>Projects</h2>
+            <div class="filter-sort">
+                <input type="text" id="search-bar" placeholder="Search projects...">
+                <select id="sort-by">
+                    <option value="priority">Sort by Priority</option>
+                    <option value="name">Sort by Name</option>
+                </select>
+            </div>
             <div class="project-grid">
-                <div class="project-card">
-                    <h3>Project One</h3>
-                    <p>This is the first project.</p>
-                    <a href="#">View Project</a>
+                <div class="project-card" data-priority="1" data-name="RepBot – AI Workout Tracker">
+                    <h3>RepBot – AI Workout Tracker</h3>
+                    <p>AI workout tracker built in Flutter with real-time pose estimation, automated rep counting, and performance analytics.</p>
+                    <div class="tech-tags"><span>Flutter</span><span>Firebase</span><span>ML Kit</span></div>
+                    <a href="projects/repbot.html">View details</a>
+                    <a href="https://github.com/My-Mation/RepBot">GitHub</a>
                 </div>
-                <div class="project-card">
-                    <h3>Project Two</h3>
-                    <p>This is the second project.</p>
-                    <a href="#">View Project</a>
+                <div class="project-card" data-priority="2" data-name="MindPlay – Real-Time Multiplayer Platform">
+                    <h3>MindPlay – Real-Time Multiplayer Platform</h3>
+                    <p>A real-time multiplayer platform for playing classic board games with friends.</p>
+                    <div class="tech-tags"><span>Node.js</span><span>Socket.IO</span><span>JavaScript</span></div>
+                    <a href="projects/mindplay.html">View details</a>
+                    <a href="https://github.com/My-Mation/MindPlay">GitHub</a>
                 </div>
-                <div class="project-card">
-                    <h3>Project Three</h3>
-                    <p>This is the third project.</p>
-                    <a href="#">View Project</a>
+                <div class="project-card" data-priority="3" data-name="WhatsApp Chat Reader & Rizz Rater">
+                    <h3>WhatsApp Chat Reader & Rizz Rater</h3>
+                    <p>A tool to analyze WhatsApp chat exports and rate your rizz.</p>
+                    <div class="tech-tags"><span>Python</span><span>Flask</span><span>JavaScript</span></div>
+                    <a href="projects/chat-reader.html">View details</a>
+                    <a href="https://github.com/My-Mation/whatsapp-chat-reader">GitHub</a>
+                </div>
+                <div class="project-card" data-priority="4" data-name="Kisor – AI Storybook Generator">
+                    <h3>Kisor – AI Storybook Generator</h3>
+                    <p>An AI-powered storybook generator that creates personalized stories for children.</p>
+                    <div class="tech-tags"><span>Flutter</span><span>Firebase</span><span>OpenAI</span></div>
+                    <a href="projects/kisor.html">View details</a>
+                    <a href="https://github.com/My-Mation/Kisor">GitHub</a>
+                </div>
+                <div class="project-card" data-priority="5" data-name="Sarbanash – 2D Indie Game">
+                    <h3>Sarbanash – 2D Indie Game</h3>
+                    <p>A 2D top-down shooter with a unique twist, built with Unity.</p>
+                    <div class="tech-tags"><span>Unity</span><span>C#</span></div>
+                    <a href="projects/sarbanash.html">View details</a>
+                    <a href="https://github.com/My-Mation/Sarbanash">GitHub</a>
+                </div>
+                <div class="project-card" data-priority="6" data-name="Golden Pledges 2025">
+                    <h3>Golden Pledges 2025</h3>
+                    <p>A website for a political campaign, built with modern web technologies.</p>
+                    <div class="tech-tags"><span>Next.js</span><span>React</span><span>Firebase</span></div>
+                    <a href="projects/golden-pledges-2025.html">View details</a>
+                    <a href="https://github.com/My-Mation/Golden-Pledges-2025">GitHub</a>
                 </div>
             </div>
         </section>
@@ -44,5 +79,40 @@
     <footer>
         <p>&copy; 2024 Debargha Sarkar</p>
     </footer>
+    <script src="js/theme.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchBar = document.getElementById('search-bar');
+            const sortBy = document.getElementById('sort-by');
+            const projectGrid = document.querySelector('.project-grid');
+            const projectCards = Array.from(document.querySelectorAll('.project-card'));
+
+            const filterAndSortProjects = () => {
+                const searchTerm = searchBar.value.toLowerCase();
+                const sortValue = sortBy.value;
+
+                let filteredProjects = projectCards.filter(card => {
+                    const title = card.querySelector('h3').textContent.toLowerCase();
+                    const description = card.querySelector('p').textContent.toLowerCase();
+                    const tags = Array.from(card.querySelectorAll('.tech-tags span')).map(tag => tag.textContent.toLowerCase());
+                    return title.includes(searchTerm) || description.includes(searchTerm) || tags.some(tag => tag.includes(searchTerm));
+                });
+
+                if (sortValue === 'name') {
+                    filteredProjects.sort((a, b) => a.dataset.name.localeCompare(b.dataset.name));
+                } else {
+                    filteredProjects.sort((a, b) => a.dataset.priority - b.dataset.priority);
+                }
+
+                projectGrid.innerHTML = '';
+                filteredProjects.forEach(card => projectGrid.appendChild(card));
+            };
+
+            searchBar.addEventListener('keyup', filterAndSortProjects);
+            sortBy.addEventListener('change', filterAndSortProjects);
+
+            filterAndSortProjects();
+        });
+    </script>
 </body>
 </html>
